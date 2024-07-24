@@ -12,14 +12,18 @@
 </head>
 
 <body>
-    {{-- @extends('layouts.AdminLayouts') --}}
+    @extends('Layouts.adminLayout')
+    @section('heading')
+        <div>
+            <h3 class="card-title"><b>Create News</b></h3>
+        </div>
+    @endsection
     @section('content')
         <div class="container">
             <div class="row row-cards">
-                <form class="card" action="{{ route('news.store') }}" method="POST" enctype="multipart/form-data">
+                <form class="card" action="/store-news" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="card-body">
-                        <h3 class="card-title">Create News</h3>
                         <div class="row row-cards">
                             <div class="col-md-12">
                                 <div class="mb-3">
@@ -45,9 +49,9 @@
                                 <div class="mb-3">
                                     <label class="form-label">Category</label>
                                     <select class="form-control form-select" id="category" name="category_id" required>
-                                        @foreach ($categories as $category)
-                                            <option value="{{ $category->id }}">{{ $category->name }}</option>
-                                        @endforeach
+                                        {{-- @foreach ($categories as $category)
+                                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                    @endforeach --}}
                                     </select>
                                 </div>
                             </div>
