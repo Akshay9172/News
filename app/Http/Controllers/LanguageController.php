@@ -7,6 +7,7 @@ use App\Models\Language;
 
 class LanguageController extends Controller
 {
+
     public function index()
     {
         $languages = Language::all();

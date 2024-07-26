@@ -43,4 +43,29 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+     public static function adminDefaultPermissions()
+     {
+        return [
+            'home',
+            'create-news','store-news','news-list',
+            'languages','create-languages',
+            'add-category','show-category','delete-category',
+            'contact-us','contact-uss','show-contactus','delete-contactus',
+        ];
+     }
+
+     public static function repoterDefaultPermissions()
+     {
+        return [
+             'home','create-news','news-list',
+        ];
+     }
+
+     public static function userDefaultPermission()
+     {
+        return [
+            'home','contact-us',
+        ];
+     }
 }

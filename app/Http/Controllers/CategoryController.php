@@ -7,6 +7,16 @@ use App\Models\Category;
 
 class CategoryController extends Controller
 {
+
+    function __construct()
+    {
+        $this->middleware('permission:show-category|add-category|delete-category', ['only' => ['showCategory']]);
+         $this->middleware('permission:add-category', ['only' => ['addCategory','storeCategory']]);
+         $this->middleware('permission:delete-category', ['only' => ['deleteCategory']]);
+    }
+
+
+
     public function addCategory(){
         return view('Categories.addCategory');
     }
