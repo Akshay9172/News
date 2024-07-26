@@ -20,9 +20,12 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'first_name',
+        'last_name',
         'email',
         'password',
+        'mobile',
+        'slug',
     ];
 
     /**
@@ -43,4 +46,16 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+     // Automatically set the slug attribute on creation
+     protected static function boot()
+     {
+         parent::boot();
+
+         static::creating(function ($user) {
+             if (!$user->slug) {
+                 $user->slug = Str::slug($user->first_name . ' ' . $user->last_name);
+             }
+         });
+     }
 }

@@ -22,4 +22,5 @@ class NewsController extends Controller
 
         return view('News.addNews',);
     }
+
 }

@@ -4,6 +4,8 @@
 
     <body class=" d-flex flex-column">
         <script src="./dist/js/demo-theme.min.js?1684106062"></script>
+
+        {{-- <h1 class="bg-black">hello Tailwind css</h1> --}}
         <div class="page page-center">
             <div class="container container-tight py-4 " style="width:32% ;">
                 <div class="text-center mb-4">
@@ -15,6 +17,7 @@
                 <div class="card card-md">
                     <div class="card-body">
                         <h2 class="h4 text-center mb-4">Login to your account</h2>
+
 
 
                         <form action="{{ route('login') }}" method="POST" autocomplete="off" novalidate>
@@ -99,7 +102,7 @@
                     </div>
                 </div>
                 <div class="text-center text-muted mt-3">
-                    Don't have account yet? <a href="./sign-up.html" tabindex="-1">Sign up</a>
+                    Don't have account yet? <a href="./register" tabindex="-1">Sign up</a>
                 </div>
             </div>
         </div>
